@@ -4,6 +4,9 @@ stages:
   - build
   - publish
 
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
 # Use the official .NET 6 Docker image for building and publishing
 # For this example, we're using the SDK image for simplicity
 # For production, consider using the runtime image to reduce container size
