@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DenizenLinter", "DenizenLinter\DenizenLinter.csproj", "{7A028CF5-3008-4267-82F7-483AE5479245}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpDenizenTools", "DenizenLinter\DenizenLinter\SharpDenizenTools.csproj", "{3DB47D69-4228-4F22-1763-152292496865}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A028CF5-3008-4267-82F7-483AE5479245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A028CF5-3008-4267-82F7-483AE5479245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A028CF5-3008-4267-82F7-483AE5479245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A028CF5-3008-4267-82F7-483AE5479245}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

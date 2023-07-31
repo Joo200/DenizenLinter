@@ -1,0 +1,3 @@
+[submodule "DenizenLinter/SharpDenizenTools"]
+	path = DenizenLinter/SharpDenizenTools
+	url = https://github.com/DenizenScript/SharpDenizenTools.git
