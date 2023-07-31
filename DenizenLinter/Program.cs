@@ -7,18 +7,19 @@ namespace DenizenLinter
     /// <summary>General program entry and handler.</summary>
     public class Program
     {
-        private static int errors = 0;
+        private static int _errors = 0;
         
         /// <summary>SW Entry point.</summary>
         static int Main(string[] args)
         {
             MetaDocs.CurrentMeta = MetaDocsLoader.DownloadAll();
-            
-            ProcessFiles(args[0]);
 
-            if (errors >= 0)
+            string rootPath = args.Length == 0 ? "." : args[0];
+            ProcessFiles(rootPath);    
+
+            if (_errors >= 0)
             {
-                Console.WriteLine($"\n\nLinter error: {errors} errors found.");
+                Console.WriteLine($"\n\nLinter error: {_errors} errors found.");
                 return 1;
             }
 
@@ -56,7 +57,7 @@ namespace DenizenLinter
             ScriptChecker checker = new(File.ReadAllText(file));
             checker.Run();
 
-            errors += checker.Errors.Count;
+            _errors += checker.Errors.Count;
 
             int totalWarns = checker.Errors.Count + checker.Warnings.Count + checker.MinorWarnings.Count;
             Console.WriteLine($"Script Check Results with {totalWarns} Warnings:");
