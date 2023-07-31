@@ -1,0 +1,30 @@
+---
+
+stages:
+  - build
+  - publish
+
+# Use the official .NET 6 Docker image for building and publishing
+# For this example, we're using the SDK image for simplicity
+# For production, consider using the runtime image to reduce container size
+# For the latest .NET 6 images, refer to: https://hub.docker.com/_/microsoft-dotnet
+image: mcr.microsoft.com/dotnet/sdk:6.0
+
+build:
+  stage: build
+  script:
+    - dotnet restore
+    - dotnet build --configuration Release
+    - dotnet publish --no-restore --configuration Release --output ./app
+  artifacts:
+    paths:
+      - app
+    expire_in: 1 hrs
+
+publish:
+  stage: publish
+  dependencies:
+    - build
+  script:
+    - echo "Please bundle ./app me some container."
+    - ls app
